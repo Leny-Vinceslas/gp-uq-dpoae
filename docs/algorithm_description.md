@@ -7,9 +7,8 @@
 
 | Property | Value |
 |---|---|
-| Participants | 38 normal-hearing adults |
-| Tasks | 4 per participant: Left/Right × 1414 Hz / 4243 Hz |
-| Total curves | 146 (6 excluded: insufficient data structure) |
+| Tasks | 4 per curve set: Left/Right × 1414 Hz / 4243 Hz |
+| Total curves | 146 |
 | Stimulus levels | 10 levels: L2 ∈ {65, 60, 55, 50, 45, 40, 35, 30, 25, 20} dB SPL |
 | Primary tones | L1 = L2 + 10 dB; f2/f1 = 1.22 |
 | Detection criterion | dp > noise2 + 3 dB (above-noise-floor) |
@@ -215,5 +214,5 @@ Fit cubic polynomial to detected-only points (dp > noise2 + 3 dB). Returns NaN w
 1. **Single-session data** — no test-retest validation of GP CI coverage against real variability
 2. **10-position grid constraint** — active sampling limited to pre-defined L2 levels
 3. **Soft Tobit approximation** — proper censored likelihood in Pa units is future work
-4. **No population pooling** — by design for individual monitoring; appropriate for ototoxicity context
+4. **No population pooling** — by design for individual-level monitoring, not population-level inference
 5. **Hyperparameter caching** — sparse fits inherit reference hyperparameters; may not be optimal at very high sparsity

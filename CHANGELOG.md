@@ -11,12 +11,12 @@ Format: date · file · what changed · why.
 - `DATA_DIR`: hardcoded absolute local filesystem path → `Path(os.environ.get("DOPAE_DATA_DIR", _HERE / "data" / "raw"))`
   - Removes a personal filesystem path ahead of publishing the repo on GitHub; default now resolves to a repo-local, git-ignored folder and can be overridden per-machine via an env var instead of editing the file.
 - `DATA_DIR_SAMPLE`, `PICKLE_PATH`: pointed at an external sibling project folder (outside this repo) → repo-local `data/sample/`, `data/processed.pkl` (both env-var overridable via `DOPAE_DATA_DIR_SAMPLE` / `DOPAE_PICKLE_PATH`)
-  - Decouples the public repo from an external, unpublished folder that itself contains real participant data.
+  - Decouples the public repo from an external, unpublished folder that itself contains real individual-level data.
 
 ### Repository organisation (not code, for reference)
 - Moved `algorithm_description.md` → `docs/algorithm_description.md`; added `README.md`, `data/README.md`, `.gitignore`.
-- `.gitignore` excludes `outputs/curve_fits/`, the four per-participant result CSVs (`experiment_results.csv`, `reference_results.csv`, `sample_analysis.csv`, `bootstrap_retest_results.csv`), and `outputs/fig1_example_curve.*` (labels its panel with one real participant's study ID — see `figures.py`, `figure1_example_curve`). Aggregate/cohort-level paper figures (fig2-fig5, `selection_overlap`, `algorithm_flowchart`, `fig_bootstrap_retest`) remain tracked.
-  - Human-subjects data privacy: this is a 38-participant clinical dataset, so only code and aggregate/cohort-level results are published publicly, not individual-level outputs.
+- `.gitignore` excludes `outputs/curve_fits/`, the four individual-level result CSVs (`experiment_results.csv`, `reference_results.csv`, `sample_analysis.csv`, `bootstrap_retest_results.csv`), and `outputs/fig1_example_curve.*` (labels its panel with a real individual ID — see `figures.py`, `figure1_example_curve`). Aggregate figures (fig2-fig5, `selection_overlap`, `algorithm_flowchart`, `fig_bootstrap_retest`) remain tracked.
+  - Data privacy: only code and aggregated results are published publicly, not individual-level outputs.
 
 ---
 

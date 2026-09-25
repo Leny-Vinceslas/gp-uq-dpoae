@@ -1,8 +1,7 @@
 # Data
 
-No participant data is included in this repository. The underlying dataset
-(38 normal-hearing adults, DPOAE I/O functions) comes from a human-subjects
-study and is not publicly shareable; only code and aggregate/cohort-level
+No individual-level data is included in this repository; the underlying
+DPOAE I/O dataset is not publicly shareable. Only code and aggregated
 results are published here.
 
 To run the pipeline, supply your own data in one of two ways:
