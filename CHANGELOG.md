@@ -1,4 +1,4 @@
-# Changelog — GP-UQ-paper code
+# Changelog: GP-UQ-paper code
 
 All code changes to the Python analysis pipeline are logged here.
 Format: date · file · what changed · why.
@@ -15,7 +15,7 @@ Format: date · file · what changed · why.
 
 ### Repository organisation (not code, for reference)
 - Moved `algorithm_description.md` → `docs/algorithm_description.md`; added `README.md`, `data/README.md`, `.gitignore`.
-- `.gitignore` excludes `outputs/curve_fits/`, the four individual-level result CSVs (`experiment_results.csv`, `reference_results.csv`, `sample_analysis.csv`, `bootstrap_retest_results.csv`), and `outputs/fig1_example_curve.*` (labels its panel with a real individual ID — see `figures.py`, `figure1_example_curve`). Aggregate figures (fig2-fig5, `selection_overlap`, `algorithm_flowchart`, `fig_bootstrap_retest`) remain tracked.
+- `.gitignore` excludes `outputs/curve_fits/`, the four individual-level result CSVs (`experiment_results.csv`, `reference_results.csv`, `sample_analysis.csv`, `bootstrap_retest_results.csv`), and `outputs/fig1_example_curve.*` (labels its panel with a real individual ID; see `figures.py`, `figure1_example_curve`). Aggregate figures (fig2-fig5, `selection_overlap`, `algorithm_flowchart`, `fig_bootstrap_retest`) remain tracked.
   - Data privacy: only code and aggregated results are published publicly, not individual-level outputs.
 
 ---
@@ -26,7 +26,7 @@ Format: date · file · what changed · why.
 - `N_REPEATS`: 10 → 5
   - 5 repeats is sufficient for the SE of mean RMSE at the CI widths reported here (<0.1 dB); halves the random-strategy compute cost.
 - `N_SAMPLES_SPARSE`: 200 → 100
-  - MDC uses sample SD (SE ≈ 0.07–0.14 dB at n=100 vs n=200); CI percentiles have SE <0.6 dB — small relative to reported CI widths of 12–26 dB. No impact on reported numbers.
+  - MDC uses sample SD (SE ≈ 0.07–0.14 dB at n=100 vs n=200); CI percentiles have SE <0.6 dB, small relative to reported CI widths of 12–26 dB. No impact on reported numbers.
 - MDC comment: updated to "estimated MDC lower bound: standard formula applied to single-session posterior SD"
   - Reflects the corrected framing that this is not an empirical test-retest MDC.
 
